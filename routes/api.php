@@ -14,12 +14,8 @@ use App\Http\Controllers\Materias\MateriasEstudianteController;
 use App\Http\Controllers\Materias\MateriasAdminController;
 
 use App\Http\Controllers\ComentarioSoftwareController;
-use App\Http\Controllers\ComentarioAguasController;
-use App\Http\Controllers\ComentarioTelecomunicacionesController;
-use App\Http\Controllers\ComentarioElectromecanicaController;
-use App\Http\Controllers\MateriasController;
 use App\Http\Controllers\DocumentosController;
-use App\Http\Controllers\ReportController;
+
 
 
 
@@ -131,6 +127,34 @@ Route::prefix('v1')->group(function ()
             Route::put('/materias/admin/{id}', [MateriasAdminController::class, 'update_admin']);
 
             Route::get('/materias/desactiva/admin/{materias}', [MateriasAdminController::class, 'destroy_admin']);
+            // RUTAS DE MATERIAS PARA EL ESTUDIANTE
+
+
+            Route::post('/materias/estudiante/{semestres}', [MateriasEstudianteController::class, 'store_estudiante']);
+
+            Route::get('/materias/estudiante', [MateriasEstudianteController::class, 'index_estudiante']);
+
+            Route::get('/materias/estudianteE', [MateriasEstudianteController::class, 'index_estudianteE']);
+
+            Route::get('/materias/estudiante/{id}', [MateriasEstudianteController::class, 'show_estudiante']);
+
+            Route::put('/materias/estudiante/{id}', [MateriasEstudianteController::class, 'update_estudiante']);
+
+            Route::get('/materias/desactiva/estudiante/{materias}', [MateriasEstudianteController::class, 'destroy_estudiante']);
+            
+            //GESTION COMENTARIOS 
+
+            Route::post('/comentarios/admin/{materias}', [ComentariosAdminController::class, 'store_admin']);
+
+            Route::get('/comentarios/admin/', [ComentariosAdminController::class, 'index_admin']);
+
+            Route::get('/comentarios/admin/{id}', [ComentariosAdminController::class, 'show_admin']);
+
+            Route::put('/comentarios/admin/{id}', [ComentariosAdminController::class, 'update_admin']);
+
+            Route::delete('/comentarios/admin/{id}', [ComentariosAdminController::class, 'delete_admin']);
+
+
 
     });
 });

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('comentario_software', function (Blueprint $table) {
+        Schema::table('comentario_sistemas', function (Blueprint $table) {
             //Relacion
             //Un usuario puede tener muchos comentarios y un comentarios le pertenece a un usuario.
             $table->unsignedBigInteger('user_id')->after('id')->nullable();
@@ -41,10 +41,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('comentario_software', function (Blueprint $table) {
+        Schema::table('comentario_sistemas', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
             $table->dropForeign(['materias_id']);
-            //
         });
     }
 };
