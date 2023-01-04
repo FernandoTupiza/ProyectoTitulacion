@@ -13,6 +13,9 @@ use App\Http\Controllers\Semestres\SemestresEstudianteController;
 use App\Http\Controllers\Materias\MateriasEstudianteController;
 use App\Http\Controllers\Materias\MateriasAdminController;
 
+use App\Http\Controllers\Documentos\DocumentosAdminController;
+use App\Http\Controllers\Documentos\DocumentosEstudianteController;
+
 use App\Http\Controllers\Comentarios\ComentariosAdminController;
 use App\Http\Controllers\Comentarios\ComentariosEstudianteController;
 
@@ -169,6 +172,13 @@ Route::prefix('v1')->group(function ()
             Route::put('/comentarios/estudiante/{id}', [ComentariosEstudianteController::class, 'update_estudiante']);
 
             Route::delete('/comentarios/estudiante/{id}', [ComentariosEstudianteController::class, 'delete_estudiante']);
+            
+            //GESTION DOCUMENTOS ADMINISTRADOR
+
+            Route::post('/documentos/admin/{materias}', [DocumentosAdminController::class, 'store_admin']);
+            Route::post('/documentos/{documentos}/actualizar', [DocumentosController::class, 'update']);
+            Route::get('/documentos/{id}', [DocumentosController::class, 'show']);
+
 
 
     });
@@ -195,25 +205,5 @@ Route::post('/documentos', [DocumentosController::class, 'store']);
 
 
 
-
-
-//CRUD DOCUMENTOS
-
-
-Route::post('/documentos', [DocumentosController::class, 'store']);
-Route::post('/documentos/{documentos}/actualizar', [DocumentosController::class, 'update']);
-Route::get('/documentos/{id}', [DocumentosController::class, 'show']);
-
-//CRUD COMENTARIOS SOFTWARE
-
-Route::post('/comentarios/software/', [ComentarioSoftwareController::class, 'store']);
-
-Route::get('/comentarios/software/', [ComentarioSoftwareController::class, 'index']);
-
-Route::get('/comentarios/software/{id}', [ComentarioSoftwareController::class, 'show']);
-
-Route::put('/comentarios/software/{id}', [ComentarioSoftwareController::class, 'update']);
-
-Route::delete('/comentarios/software/{id}', [ComentarioSoftwareController::class, 'delete']);
 
 

@@ -5,17 +5,17 @@ namespace App\Http\Controllers\Documentos;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Documentos;
+use App\Models\Materias;
 use Illuminate\Support\Facades\Validator;
 
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class DocumentosAdminController extends Controller
 {
-    public function store_admin (Request $request)
+    public function store_admin (Request $request, Materias $materias)
     {
         $doc=$request -> validate([
 
-            // 'materias_id' => 'required|numeric',
             'documentos' => ['required', 'file', 'mimes:pdf', 'max:200000'],
         ]);
 
@@ -32,6 +32,9 @@ class DocumentosAdminController extends Controller
         // // Upload any File to Cloudinary with One line of Code
         // $uploadedFileUrl = Cloudinary::uploadFile($request->file('file')->getRealPath())->getSecurePath();
         // $doc1->attachImage($uploadedFileUrl);
+
+        $documentos = new Documentos($request->all());
+        $documentos->materias_id = $materias->id;
         
         Documentos::create([
             'path' => $uploadedFileUrl,
