@@ -13,6 +13,8 @@ use App\Http\Controllers\Semestres\SemestresEstudianteController;
 use App\Http\Controllers\Materias\MateriasEstudianteController;
 use App\Http\Controllers\Materias\MateriasAdminController;
 
+use App\Http\Controllers\Comentarios\ComentariosAdminController;
+
 use App\Http\Controllers\ComentarioSoftwareController;
 use App\Http\Controllers\DocumentosController;
 
