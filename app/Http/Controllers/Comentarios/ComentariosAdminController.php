@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Comentarios;
 
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ComentarioSistema;
 use App\Http\Resources\Resource;
 use App\Models\Materias;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Facades\Auth;
 class ComentariosAdminController extends Controller
 {
 //FUNCION PARA CREAR COMENTARIOS
@@ -34,9 +35,11 @@ public function store_admin (Request $request, Materias $materias)
     
     $comentarios = new ComentarioSistema($request->all());
 
-    $comentarios->materias_id = $materias->id;
+    $comentarios ->materias_id = $materias->id;
 
     // $user = Auth::user();
+
+    // $comentarios->$user = $user->id;
     // $registro->password_confirmation = $request->password_confirmation;
     $comentarios->save();
     return response()->json(["comentarios" => $comentarios, "message"=>"El comentario se ha creado satisfactoriamente"], 200);
@@ -54,7 +57,7 @@ public function store_admin (Request $request, Materias $materias)
     }
 
 //FUNCION PARA VER UN COMENTARIOS
-    public function show (Request $request, $id){
+    public function show_admin ( $id){
 
         $comentarios = ComentarioSistema::find($id);
         if($comentarios){

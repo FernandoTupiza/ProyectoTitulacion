@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 class ComentariosEstudianteController extends Controller
 {
 //FUNCION PARA CREAR COMENTARIOS
-public function store(Request $request, Materias $materias)
+public function store_estudiante(Request $request, Materias $materias)
 {
     $rules=array(
 
@@ -37,14 +37,16 @@ public function store(Request $request, Materias $materias)
 
     $comentarios->materias_id = $materias->id;
 
-    $user = Auth::user();
+    // $user = Auth::user();
+
+    // $comentarios->$user = $user->id;
     // $registro->password_confirmation = $request->password_confirmation;
     $comentarios->save();
     return response()->json(["comentarios" => $comentarios, "message"=>"El comentario se ha creado satisfactoriamente"], 200);
 
 }
 //FUNCION PARA VER LOS COMENTARIOS
-    public function index (Request $request){
+    public function index_estudiante (Request $request){
 
         $comentarios = ComentarioSistema::all();
 
@@ -55,7 +57,7 @@ public function store(Request $request, Materias $materias)
     }
 
 //FUNCION PARA VER UN COMENTARIOS
-    public function show (Request $request, $id){
+    public function show_estudiante (Request $request, $id){
 
         $comentarios = ComentarioSistema::find($id);
         if($comentarios){
@@ -74,7 +76,7 @@ public function store(Request $request, Materias $materias)
         }
     }
 //FUNCION PARA ACTUALIZAR COMENTARIOS
-    public function update (Request $request, $id){
+    public function update_estudiante (Request $request, $id){
 
         $fields = $request->validate([
 
@@ -105,7 +107,7 @@ public function store(Request $request, Materias $materias)
     }
 
     // FUNCION PARA ELIMINAR COMENTARIOS
-    public function delete (Request $request, $id){
+    public function delete_estudiante (Request $request, $id){
 
 
         $comentarios = ComentarioSistema::find($id);

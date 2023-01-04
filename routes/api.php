@@ -14,6 +14,7 @@ use App\Http\Controllers\Materias\MateriasEstudianteController;
 use App\Http\Controllers\Materias\MateriasAdminController;
 
 use App\Http\Controllers\Comentarios\ComentariosAdminController;
+use App\Http\Controllers\Comentarios\ComentariosEstudianteController;
 
 use App\Http\Controllers\ComentarioSoftwareController;
 use App\Http\Controllers\DocumentosController;
@@ -144,7 +145,7 @@ Route::prefix('v1')->group(function ()
 
             Route::get('/materias/desactiva/estudiante/{materias}', [MateriasEstudianteController::class, 'destroy_estudiante']);
             
-            //GESTION COMENTARIOS 
+            //GESTION COMENTARIOS ADMINISTRADOR
 
             Route::post('/comentarios/admin/{materias}', [ComentariosAdminController::class, 'store_admin']);
 
@@ -156,6 +157,18 @@ Route::prefix('v1')->group(function ()
 
             Route::delete('/comentarios/admin/{id}', [ComentariosAdminController::class, 'delete_admin']);
 
+
+            //GESTION COMENTARIOS ADMINISTRADOR
+
+            Route::post('/comentarios/estudiante/{materias}', [ComentariosEstudianteController::class, 'store_estudiante']);
+
+            Route::get('/comentarios/estudiante/', [ComentariosEstudianteController::class, 'index_estudiante']);
+
+            Route::get('/comentarios/estudiante/{id}', [ComentariosEstudianteController::class, 'show_estudiante']);
+
+            Route::put('/comentarios/estudiante/{id}', [ComentariosEstudianteController::class, 'update_estudiante']);
+
+            Route::delete('/comentarios/estudiante/{id}', [ComentariosEstudianteController::class, 'delete_estudiante']);
 
 
     });
