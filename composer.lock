@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f8f2b5029cfb3dfe13bc22eb8a32f66",
+    "content-hash": "a7ebb5f62bc175c7cfe13acb8eb26d17",
     "packages": [
         {
             "name": "brick/math",
@@ -61,53 +61,6 @@
                 }
             ],
             "time": "2022-08-10T22:54:19+00:00"
-        },
-        {
-            "name": "caouecs/laravel-lang",
-            "version": "3.0.62",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/caouecs/lang.git",
-                "reference": "fcb8cec051b175278e0a9efa440f0b1033d12dd7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/caouecs/lang/zipball/fcb8cec051b175278e0a9efa440f0b1033d12dd7",
-                "reference": "fcb8cec051b175278e0a9efa440f0b1033d12dd7",
-                "shasum": ""
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.10"
-            },
-            "suggest": {
-                "ablunier/laravel-lang-installer": "Command for easily add languages to a Laravel project",
-                "andrey-helldar/laravel-lang-publisher": "Easy installation and update of translation files for your project",
-                "arcanedev/laravel-lang": "Translations manager and checker for Laravel 5",
-                "overtrue/laravel-lang": "Command to add languages in your project"
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "caouecs",
-                    "email": "caouecs@caouecs.net"
-                }
-            ],
-            "description": "Languages for Laravel",
-            "keywords": [
-                "lang",
-                "languages",
-                "laravel",
-                "lpm"
-            ],
-            "support": {
-                "source": "https://github.com/caouecs/lang/tree/3.0.62"
-            },
-            "abandoned": "https://github.com/Laravel-Lang/lang",
-            "time": "2019-03-17T10:36:46+00:00"
         },
         {
             "name": "cloudinary-labs/cloudinary-laravel",
@@ -1249,61 +1202,6 @@
                 }
             ],
             "time": "2022-10-26T14:07:24+00:00"
-        },
-        {
-            "name": "laravel-lang/lang",
-            "version": "9.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Laravel-Lang/lang.git",
-                "reference": "8c5cc7a493af27e175a9f1b7f5c2242bb9faec87"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Lang/lang/zipball/8c5cc7a493af27e175a9f1b7f5c2242bb9faec87",
-                "reference": "8c5cc7a493af27e175a9f1b7f5c2242bb9faec87",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*"
-            },
-            "require-dev": {
-                "andrey-helldar/pretty-array": "^2.3",
-                "andrey-helldar/support": "^3.6",
-                "guzzlehttp/guzzle": "^7.3",
-                "php": "^8.0",
-                "phpunit/phpunit": "^9.5",
-                "symfony/var-dumper": "^5.2",
-                "vlucas/phpdotenv": "^5.3"
-            },
-            "suggest": {
-                "andrey-helldar/laravel-lang-publisher": "Easy installation and update of translation files for your project",
-                "arcanedev/laravel-lang": "Translations manager and checker for Laravel 5",
-                "overtrue/laravel-lang": "Command to add languages in your project"
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Laravel-Lang Team",
-                    "homepage": "https://github.com/Laravel-Lang"
-                }
-            ],
-            "description": "Languages for Laravel",
-            "keywords": [
-                "lang",
-                "languages",
-                "laravel",
-                "lpm"
-            ],
-            "support": {
-                "issues": "https://github.com/Laravel-Lang/lang/issues",
-                "source": "https://github.com/Laravel-Lang/lang"
-            },
-            "time": "2021-05-14T21:25:59+00:00"
         },
         {
             "name": "laravel/framework",
@@ -3313,60 +3211,6 @@
                 }
             ],
             "time": "2022-12-31T22:20:34+00:00"
-        },
-        {
-            "name": "shalvah/laravel-jsend",
-            "version": "2.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/shalvah/laravel-jsend.git",
-                "reference": "11e6d0968a86a3a3744e7e58b53f8a490f067397"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/shalvah/laravel-jsend/zipball/11e6d0968a86a3a3744e7e58b53f8a490f067397",
-                "reference": "11e6d0968a86a3a3744e7e58b53f8a490f067397",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "^7.0|^8.0|^9.0",
-                "php": ">=7.2.5"
-            },
-            "require-dev": {
-                "orchestra/testbench": "^5.0|^6.0",
-                "phpunit/phpunit": "^8.0"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "Shalvah\\LaravelJsend\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Shalvah Adebayo",
-                    "email": "shalvah.adebayo@gmail.com"
-                }
-            ],
-            "description": "Laravel helpers to easily send JSend-compliant responses",
-            "homepage": "http://shalvah.me/laravel-jsend",
-            "keywords": [
-                "jsend",
-                "json",
-                "laravel"
-            ],
-            "support": {
-                "issues": "https://github.com/shalvah/laravel-jsend/issues",
-                "source": "https://github.com/shalvah/laravel-jsend"
-            },
-            "time": "2022-03-22T18:20:33+00:00"
         },
         {
             "name": "spatie/dropbox-api",
