@@ -67,11 +67,11 @@ Route::prefix('v1')->group(function ()
 
             Route::get('/carreras/admin', [CarrerasAdminController::class, 'index_admin']);
 
-            Route::get('/carreras/adminE', [CarrerasAdminController::class, 'index_admin']);
+            Route::get('/carreras/adminE', [CarrerasAdminController::class, 'index_adminE']);
 
-            Route::get('/carreras/admin/{id}', [CarrerasAdminController::class, 'index_admin']);
+            Route::get('/carreras/admin/{id}', [CarrerasAdminController::class, 'show_admin']);
 
-            Route::put('/carreras/admin/{id}', [CarrerasAdminController::class, 'index_admin']);
+            Route::put('/carreras/admin/{id}', [CarrerasAdminController::class, 'update_admin']);
 
             Route::get('/carreras/desactiva/admin/{carreras}', [CarrerasAdminController::class, 'destroy_admin']);
 
