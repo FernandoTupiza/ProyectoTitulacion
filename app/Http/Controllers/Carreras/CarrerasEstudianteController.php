@@ -17,7 +17,7 @@ class CarrerasEstudianteController extends Controller
     //FUNCION PARA CREAR CARRERAS
     public function store_estudiante(Request $request)
     {
-        $response = Gate::inspect('create-carreras');
+        $response = Gate::inspect('gestion-carreras');
 
         if($response->allowed())
         {
