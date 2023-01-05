@@ -176,8 +176,8 @@ Route::prefix('v1')->group(function ()
             //GESTION DOCUMENTOS ADMINISTRADOR
 
             Route::post('/documentos/admin/{materias}', [DocumentosAdminController::class, 'store_admin']);
-            Route::post('/documentos/{documentos}/actualizar', [DocumentosController::class, 'update']);
-            Route::get('/documentos/{id}', [DocumentosController::class, 'show']);
+            Route::post('/documentos/{documentos}/actualizar', [DocumentosAdminController::class, 'update_admin']);
+            Route::get('/documentos/{id}', [DocumentosAdminController::class, 'show_admin']);
 
 
 

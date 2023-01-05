@@ -37,9 +37,9 @@ public function store_admin (Request $request, Materias $materias)
 
     $comentarios ->materias_id = $materias->id;
 
-    // $user = Auth::user();
+    $user = Auth::user();
 
-    // $comentarios->$user = $user->id;
+    $comentarios->user_id = $user->id;
     // $registro->password_confirmation = $request->password_confirmation;
     $comentarios->save();
     return response()->json(["comentarios" => $comentarios, "message"=>"El comentario se ha creado satisfactoriamente"], 200);
