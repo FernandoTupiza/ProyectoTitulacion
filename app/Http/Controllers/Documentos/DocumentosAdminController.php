@@ -33,11 +33,13 @@ class DocumentosAdminController extends Controller
         // $uploadedFileUrl = Cloudinary::uploadFile($request->file('file')->getRealPath())->getSecurePath();
         // $doc1->attachImage($uploadedFileUrl);
 
-        $documentos = new Documentos($request->all());
-        $documentos->materias_id = $materias->id;
-        
+      
+
+
         Documentos::create([
             'path' => $uploadedFileUrl,
+            
+            'materias_id' => $materias->id
         ]);
 
         return $this->sendResponse('Documento subido  satisfactoriamente');
