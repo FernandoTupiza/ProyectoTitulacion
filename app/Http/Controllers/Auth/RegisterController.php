@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use PhpParser\Node\Stmt\TryCatch;
+use Illuminate\Support\Str;
+
 
 // use App\Http\Controllers\Auth\Validator;
 
@@ -23,7 +25,8 @@ class RegisterController extends Controller
             'first_name' => 'required|string',
             'last_name' => 'required|string',
             'email' => 'required|string|unique:users,email',
-            'password' => 'required|string|confirmed'
+            'password' => 'required|string|confirmed',
+            
             
         ]);
 
@@ -32,7 +35,8 @@ class RegisterController extends Controller
             'first_name' => $fields['first_name'],
             'last_name' => $fields['last_name'],
             'email' => $fields['email'],
-            'password' => bcrypt($fields['password'])
+            'password' => bcrypt($fields['password']),
+            'remember_token' => Str::random($fields['remember_token']),
         ]);
 
         //$token = $user->createToken('myapptoken')->plainTextToken;
