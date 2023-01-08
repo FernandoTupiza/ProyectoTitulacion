@@ -63,6 +63,23 @@ class MateriasAdminController extends Controller
             ]);
         }
         
+        // //FUNCION PARA VER TODAS LA MATERIAS CREADAS
+        // public function index_admin (Request $request){
+        //     $response = Gate::inspect('gestion-materias-admin');
+
+        //     if($response->allowed())
+        //     {
+        //         $materias = Materias::all();
+        //         return response()->json([
+        //             'data'=> $materias
+
+        //         ]);
+        //     }else{
+        //         echo $response->message();
+        //     }
+        // }
+        
+                
         //FUNCION PARA VER TODAS LA MATERIAS CREADAS
         public function index_admin (Request $request){
             $response = Gate::inspect('gestion-materias-admin');
@@ -72,13 +89,13 @@ class MateriasAdminController extends Controller
                 $materias = Materias::all();
                 return response()->json([
                     'data'=> $materias
+                    
 
                 ]);
             }else{
                 echo $response->message();
             }
         }
-        
         //FUNCION PARA VER UNA MATERIA
         public function show_admin (Request $request, $id){
             $response = Gate::inspect('gestion-materias-admin');
@@ -114,7 +131,6 @@ class MateriasAdminController extends Controller
             if($response->allowed())
             {
                 $fields = $request->validate([
-                    'semestres_id' => 'required|numeric',
                     'nombre' => 'nullable|string',
                     'descripcion' => 'nullable|string',
                     'encargado' => 'nullable|string'

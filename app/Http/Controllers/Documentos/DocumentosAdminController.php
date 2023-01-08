@@ -86,4 +86,15 @@ class DocumentosAdminController extends Controller
 
         }
     }
+        //FUNCION PARA VER TODAS LA MATERIAS CREADAS
+        public function index_admin (Request $request){
+
+                $documentos = Documentos::all();
+                return response()->json([
+                    'data'=> $documentos
+
+                ]);
+
+        }
+
 }
